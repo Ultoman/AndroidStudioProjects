@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.niu.cs.z1764108.draw.MainActivity"
+    android:orientation="vertical"
+    android:background="#cbcaca">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#cbcaca"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:text="@string/new_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/newButton"
+            android:layout_weight="1"
+            android:background="@color/white" />
+
+        <Button
+            android:text="@string/brush_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/brushButton"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="@string/erase_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/eraseButton"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="@string/save_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/saveButton"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <edu.niu.cs.z1764108.draw.DrawingView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/drawing"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:background="#FFFFFFFF"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/colors"
+        android:layout_gravity="center_horizontal">
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/paint_color"
+            android:src="@drawable/paint_color"
+            android:background="@color/black"
+            android:tag="@string/black_tag"
+            android:onClick="paintClicked" />
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/paint_color"
+            android:src="@drawable/paint_color"
+            android:background="@color/white"
+            android:tag="@string/white_tag"
+            android:onClick="paintClicked" />
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/paint_color"
+            android:src="@drawable/paint_color"
+            android:background="@color/red"
+            android:tag="@string/red_tag"
+            android:onClick="paintClicked" />
+    </LinearLayout>
+</LinearLayout>

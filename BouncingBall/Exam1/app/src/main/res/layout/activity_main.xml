@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="@string/mainTitleString"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/shapeRadioGroup">
+
+        <RadioButton
+            android:text="@string/triangleString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/triangleRadioButton"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:text="@string/circleString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/circleRadioButton"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:text="@string/ellipseString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ellipseRadioButton"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+    <Button
+        android:text="@string/infoButtonString"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/infoButton"
+        android:layout_marginTop="20dp"
+        android:onClick="doCalc"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/areaTextView"
+        android:layout_marginTop="35dp"
+        android:hint="@string/hintString"/>
+</LinearLayout>

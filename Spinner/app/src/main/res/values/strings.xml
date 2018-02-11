@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Spinner</string>
+
+
+    <string-array name="spinnerValues">
+        <item>Sausage</item>
+        <item>Pepperoni</item>
+        <item>Pineapple</item>
+        <item>Bacon</item>
+    </string-array>
+</resources>

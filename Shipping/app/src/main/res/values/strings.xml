@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Shipping</string>
+    <string name="weightString">Weight of the Package</string>
+    <string name="ouncesString">(in ounces)</string>
+
+    <string name="baseCostString">Base Cost:</string>
+    <string name="addedCostString">Added Cost:</string>
+    <string name="totalCostString">Total Shipping Cost:</string>
+
+    <string name="zeroDollarString">$0.00</string>
+    <string name="zeroString">0</string>
+
+    <string name="helpText">
+        This application calculates the cost of the shipping an item.
+        \n\n
+        The base cost for the shipping item is $3.00 for the first
+        16 ounces. An additional cost of $0.50 will be added for each additional 4 ounces
+        for items that weigh more than 16 ounces.
+    </string>
+</resources>

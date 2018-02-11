@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Calorie Counter</string>
+    <string name="pattyOneString">Beef Patty</string>
+    <string name="pattyTwoString">Turkey Patty</string>
+    <string name="pattyThreeString">Veggie Patty</string>
+
+    <string name="baconString">Bacon</string>
+
+    <string name="noCheeseString">No Cheese</string>
+    <string name="cheddarString">Cheddar</string>
+    <string name="mozzString">Mozzarella</string>
+
+    <string name="sauceString">Special Sauce - up to one teaspoon:</string>
+    <string name="calorieString">Calories?</string>
+</resources>

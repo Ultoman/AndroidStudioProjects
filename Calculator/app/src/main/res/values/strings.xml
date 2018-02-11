@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="num1Label">Number 1:</string>
+    <string name="num2Label">Number 2:</string>
+    <string name="addLabel">+</string>
+    <string name="subtractLabel">-</string>
+    <string name="multiplyLabel">*</string>
+    <string name="divideLabel">/</string>
+    <string name="clearLabel">Clear</string>
+    <string name="resultLabel">Result:</string>
+</resources>

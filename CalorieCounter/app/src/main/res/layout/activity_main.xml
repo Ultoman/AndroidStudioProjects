@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:orientation="vertical"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.niu.cs.z1764108.caloriecounter.MainActivity"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/topbun"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pattyRadioGroup"
+        android:layout_gravity="center_horizontal">
+
+        <RadioButton
+            android:text="@string/pattyOneString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/beefRadioButton"
+            android:layout_weight="1"
+            android:checked="true" />
+
+        <RadioButton
+            android:text="@string/pattyTwoString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/turkeyRadioButton"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:text="@string/pattyThreeString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/veggieRadioButton"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+    <CheckBox
+        android:text="@string/baconString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/baconCheckBox"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8sp"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cheeseRadioGroup"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8sp">
+
+        <RadioButton
+            android:text="@string/noCheeseString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/noCheeseRadioButton"
+            android:layout_weight="1"
+            android:layout_marginRight="10sp"
+            android:checked="true" />
+
+        <RadioButton
+            android:text="@string/cheddarString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cheese1RadioButton"
+            android:layout_weight="1"
+            android:layout_marginRight="10sp"/>
+
+        <RadioButton
+            android:text="@string/mozzString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cheese2RadioButton"
+            android:layout_weight="1"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:text="@string/sauceString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8sp"/>
+
+    <SeekBar
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/sauceSeekBar"
+        android:layout_gravity="center_horizontal"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/bottombun"/>
+
+    <TextView
+        android:text="@string/calorieString"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/calorieTextView"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textStyle="normal|bold|italic"/>
+
+</LinearLayout>

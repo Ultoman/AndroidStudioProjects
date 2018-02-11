@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Exam1</string>
+    <string name="mainTitleString">Find the area of:</string>
+    <string name="triangleString">Triangle</string>
+    <string name="circleString">Circle</string>
+    <string name="ellipseString">Ellipse</string>
+    <string name="infoButtonString">Get Shape Information</string>
+    <string name="hintString">Calculated area will display here</string>
+</resources>

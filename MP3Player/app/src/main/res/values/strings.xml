@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MP3Player</string>
+    <string name="titleString">Touch an mp3 to play the song:</string>
+    <string name="pauseString">Pause</string>
+    <string name="playString">Play</string>
+    <string name="stopString">Stop</string>
+</resources>

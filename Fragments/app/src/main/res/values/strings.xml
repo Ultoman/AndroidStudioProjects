@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Fragments</string>
+
+    <string name="gold">GOLD</string>
+    <string name="blue">BLUE</string>
+    <string name="plum">PLUM</string>
+
+    <string name="gold_detail">Gold is associated with sunshine</string>
+    <string name="blue_detail">Blue is associated with trust</string>
+    <string name="plum_detail">Plum is a color used in weddings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
