@@ -2,8 +2,10 @@ package jab.trivia;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -11,6 +13,9 @@ import java.util.ArrayList;
  * Created by JAB on 2/4/2018.
  */
 
+/*
+Handles all writing and reading from database
+ */
 public class DatabaseManager extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "triviadb";
@@ -25,10 +30,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
                                 INCORRECT_ANSWER_1 = "incorrect_answer_1",
                                 INCORRECT_ANSWER_2 = "incorrect_answer_2",
                                 INCORRECT_ANSWER_3 = "incorrect_answer_3";
-    // Declaring categories variables
-    private static final String CATEGORY_TABLE = "categories",
-                                C_ID = "id",
-                                CATEGORY = "category";
+
     // Declaring score variables
     private static final String SCORE_TABLE = "scores",
                                 S_ID = "id",
@@ -50,12 +52,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
                             INCORRECT_ANSWER_2 + " text, " +
                             INCORRECT_ANSWER_3 + " text )";
         db.execSQL(sqlCreateTrivia);
-
-        // Build categories table
-        String sqlCreateCategories = "create table " + CATEGORY_TABLE + "( " +
-                                C_ID + " integer primary key, " +
-                                CATEGORY + " text )";
-        db.execSQL(sqlCreateCategories);
 
         // Build score table
         String sqlCreateScore = "create table " + SCORE_TABLE + "( " +
@@ -81,16 +77,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 trivia.getInc_ans_1() + "', '" +
                 trivia.getInc_ans_2() + "', '" +
                 trivia.getInc_ans_3() + "' )";
-        db.execSQL(sqlInsert);
-        db.close();
-    }
-
-    // insert into category table
-    public void insertCategory(int id, String category)
-    {
-        SQLiteDatabase db = getWritableDatabase();
-        String sqlInsert = "insert into " + CATEGORY_TABLE + " values( " + id + "', '" + category + "' )";
-
         db.execSQL(sqlInsert);
         db.close();
     }
@@ -125,68 +111,60 @@ public class DatabaseManager extends SQLiteOpenHelper {
         return trivias;
     }
 
+    //get all scores from database
+    public ArrayList<Float> selectAllScores()
+    {
+        String sqlSelect = "select * from " + SCORE_TABLE + " order by " + SCORE + " desc";
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(sqlSelect, null);
+        ArrayList<Float> scores = new ArrayList<>();
+
+        while(cursor.moveToNext())
+        {
+            // Grab current score
+            float score = cursor.getFloat(1);
+            Log.d("score", "Score: " + score);
+
+            scores.add(score);
+        }
+
+        db.close();
+        return scores;
+    }
+
     // get Count of trivia questions
     public int getTriviaCount()
     {
-        String sqlSelect = "select * from " + TRIVIA_TABLE;
-        SQLiteDatabase db = getWritableDatabase();
-        Cursor cursor = db.rawQuery(sqlSelect, null);
-        int count = cursor.getCount();
+        SQLiteDatabase db = getReadableDatabase();
+        int count = (int)DatabaseUtils.queryNumEntries(db, TRIVIA_TABLE);
         db.close();
         return count;
 
     }
 
-    // get all category names from database
-    public String [] selectAllCategories()
+    //get Count of scores
+    public int getScoreCount()
     {
-        String sqlSelect = "select " + C_ID + " from " + CATEGORY_TABLE;
-        SQLiteDatabase db = getWritableDatabase();
-        Cursor cursor = db.rawQuery(sqlSelect, null);
-        String categories[] = new String[cursor.getCount() + 1];
-        int i = 1;
-        // set first category to any
-        categories[0] = "Any";
-        while(cursor.moveToNext())
-        {   //Grab current category name
-            categories[i] = cursor.getString(1);
-            i++;
-        }
+        SQLiteDatabase db = getReadableDatabase();
+        int count = (int)DatabaseUtils.queryNumEntries(db, SCORE_TABLE);
         db.close();
-        return categories;
-    }
-
-    // get category id corresponding to name
-    public int selectCategory(String name)
-    {
-        if (name == "Any")
-        {
-            return 0;
-        }
-        else {
-            String sqlSelect = "select " + C_ID + " from " + CATEGORY_TABLE + " where " + CATEGORY + " = " + name;
-            SQLiteDatabase db = getWritableDatabase();
-            Cursor cursor = db.rawQuery(sqlSelect, null);
-            db.close();
-            return cursor.getInt(0);
-        }
-    }
-
-    // Drop category table
-    public void dropCategory()
-    {
-        String sqlDrop = "drop table " + CATEGORY_TABLE;
-        SQLiteDatabase db = getWritableDatabase();
-        db.execSQL(sqlDrop);
-        db.close();
+        return count;
     }
 
     // Drop trivia table
-    public void dropTrivia()
+    public void deleteTrivia()
     {
-        String sqlDrop = "drop table " + TRIVIA_TABLE;
+        //String sqlDrop = "drop table " + TRIVIA_TABLE;
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL(sqlDrop);
+        db.execSQL("delete from " + TRIVIA_TABLE);
+        db.close();
+    }
+
+    // Drop score table
+    public void deleteScores()
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("delete from " + SCORE_TABLE);
         db.close();
     }
 

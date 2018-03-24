@@ -4,11 +4,17 @@ package jab.trivia;
  * Created by JAB on 2/4/2018.
  */
 
+/*
+Structure for a trivia question when creating the game screen
+
+ */
+
 public class Trivia {
     //Create trivia attributes
     private int id;
     private String question, correct_ans, inc_ans_1, inc_ans_2, inc_ans_3;
 
+    // Constructor
     public Trivia(int id, String question, String correct_ans, String inc_ans_1, String inc_ans_2, String inc_ans_3) {
         this.id = id;
         this.question = question;
@@ -17,6 +23,8 @@ public class Trivia {
         this.inc_ans_2 = inc_ans_2;
         this.inc_ans_3 = inc_ans_3;
     }
+
+    // Getters and Setters
 
     public int getId() {
         return id;

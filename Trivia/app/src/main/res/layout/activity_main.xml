@@ -55,4 +55,18 @@
         android:id="@+id/howToPlayButton"
         android:layout_centerHorizontal="true"
         android:onClick="howToPlay" />
+
+    <Button
+        android:id="@+id/deleteQuestionsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="deleteQuestions"
+        android:text="Delete Questions" />
+
+    <Button
+        android:id="@+id/deleteScoresButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="deleteScores"
+        android:text="Delete Scores" />
 </LinearLayout>

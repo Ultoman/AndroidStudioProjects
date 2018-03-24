@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Trivia</string>
     <string name="about">
-        Welcome to Trivia Master!\n\nTo get started, press the \"Add Questions\" button on the main screen to add the number of questions, category, and difficulty you prefer.\n\nAfter adding your questions just press \"New Game\" button to start a new game with questions added.\n\nGet a question right and gain  1 point!\nGet it wrong and earn a grand total of 0 points!\n\nGood Luck.
+        Welcome to Trivia Master!\n\nTo get started, press the \"Add Questions\" button on the main screen to add the number of questions and difficulty you prefer.\n\nAfter adding your questions just press the \"New Game\" button to start a new game with questions added.\n\nGet a question right and gain  1 point!\n\nGood Luck.
     </string>
 </resources>

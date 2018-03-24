@@ -86,4 +86,12 @@
         android:layout_weight="1"
         android:onClick="quitGame" />
 
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Score : "
+        android:textAlignment="center"
+        android:textColor="@android:color/black" />
+
 </LinearLayout>

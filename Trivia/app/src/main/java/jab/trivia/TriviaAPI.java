@@ -4,6 +4,9 @@ package jab.trivia;
  * Created by JAB on 2/4/2018.
  */
 
+/*
+Structure for creating the API call to the trivia database
+ */
 public class TriviaAPI {
 
     //Create variables to hold the parameters of Trivia API
@@ -44,13 +47,6 @@ public class TriviaAPI {
 
         return url;
     }
-
-    public String generateCategoryURL()
-    {
-        return "https://opentdb.com/api_category.php";
-    }
-
-
 
     //Getters and Setters for TriviaAPI
 
