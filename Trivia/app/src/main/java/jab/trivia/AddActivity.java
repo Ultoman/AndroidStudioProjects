@@ -54,6 +54,7 @@ public class AddActivity extends AppCompatActivity {
         backB = (Button)findViewById(R.id.backButton);
 
         //Set up listeners for difficulty radio buttons
+
         diffRG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -67,6 +68,11 @@ public class AddActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
+
+
     }
 
 

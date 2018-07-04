@@ -5,6 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/field_background"
     tools:context="com.example.z1764108.fishy.MainActivity">
 
 
